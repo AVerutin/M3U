@@ -93,7 +93,7 @@ std::string Logger::logName()
     auto date = std::put_time(&now, "%Y-%m-%d");
 
     // Получить имя каталога для сохранения логов
-    auto full_path = std::filesystem::current_path();
+    std::filesystem::path full_path = std::filesystem::current_path();
     std::string path = full_path.string() + "\\Logs\\";
 
     // Проверим, существует ли каталог для хранения логов
